@@ -1,0 +1,771 @@
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto";
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  caret-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header {
+  width: 100vw;
+  height: 100vh;
+  color: #f1f5f8;
+  background: -webkit-gradient(
+      linear,
+      right top,
+      left top,
+      from(black),
+      color-stop(rgba(0, 0, 0, 0.9)),
+      color-stop(rgba(0, 0, 0, 0.9)),
+      color-stop(rgba(0, 0, 0, 0)),
+      to(rgba(0, 0, 0, 0))
+    ),
+    url("https://www.nme.com/wp-content/uploads/2020/05/GettyImages-887219084.jpg")
+      no-repeat;
+  background: linear-gradient(
+      to left,
+      black,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ),
+    url("https://www.nme.com/wp-content/uploads/2020/05/GettyImages-887219084.jpg")
+      no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  z-index: 4;
+}
+
+.header-nav.active {
+  background-color: #f1f5f8;
+  -webkit-box-shadow: 0 0 20px rgba(34, 34, 34, 0.2);
+  box-shadow: 0 0 20px rgba(34, 34, 34, 0.2);
+}
+
+.header-nav.active a {
+  color: #222;
+}
+
+.header-nav .btn-container {
+  position: relative;
+  min-height: 3rem;
+}
+
+.header-nav_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 2100px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header-nav_links li {
+  margin: 1.5em;
+}
+
+.header-nav_links li a {
+  font-size: 1.4rem;
+  color: #f1f5f8;
+  font-family: "Ubuntu";
+  position: relative;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.header-nav_links li a::after {
+  content: " ";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  -webkit-transform: translateY(200%);
+  transform: translateY(200%);
+  bottom: 0;
+  left: 0;
+  background-color: #b11919;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.header-nav_links li a:hover {
+  color: #b11919;
+}
+
+.header-nav_links li a:hover::after {
+  width: 100%;
+}
+
+.header-nav .close-btn {
+  color: #b11919;
+  font-size: 2rem;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  display: none;
+}
+
+.header-section_article {
+  position: absolute;
+  width: 300px;
+  top: 25vh;
+  right: 15vw;
+  height: 50vh;
+}
+
+.header-section_article h1 {
+  font-size: 3.2rem;
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+  line-height: 1.8;
+}
+
+.header-section_article p {
+  margin-top: 3em;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-family: "Libre Baskerville";
+}
+
+.header .toggle-btn {
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+  display: none;
+}
+
+.section {
+  margin: 0 auto;
+}
+
+.section-article-info {
+  height: 100vh;
+  min-height: 30rem;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(34, 34, 34, 0.5)),
+      color-stop(rgba(34, 34, 34, 0.8)),
+      to(#222)
+    ),
+    url("https://wallpaperaccess.com/full/2892685.jpg") no-repeat;
+  background: linear-gradient(
+      rgba(34, 34, 34, 0.5),
+      rgba(34, 34, 34, 0.8),
+      #222
+    ),
+    url("https://wallpaperaccess.com/full/2892685.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: #f1f5f8;
+  padding: 2em 0;
+}
+
+.section-article-info .content {
+  text-align: center;
+  width: 95%;
+  max-width: 800px;
+}
+
+.section-article-info .content h2 {
+  font-size: 2.4rem;
+  margin: 0 1em;
+  font-family: "Poppins";
+  letter-spacing: 2px;
+}
+
+.section-article-info .content p {
+  font-size: 1.4rem;
+  font-family: "Playfair Display";
+  letter-spacing: 0.5px;
+  margin: 2em 0;
+}
+
+.section-article-info .content p i {
+  margin: 0 1em;
+}
+
+.section-article-info .content h5 {
+  font-family: "Lobster";
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  color: #ec1313;
+}
+
+.section-article-genre {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.section-article-genre .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  background: rgba(34, 34, 34, 0.9);
+}
+
+.section-article-genre .btn-container .genre-btn {
+  color: #f1f5f8;
+  padding: 1em;
+  font-size: 1.4rem;
+  margin: 0 0.2em;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.section-article-genre .btn-container .genre-btn:hover {
+  color: #ec1313;
+  -webkit-box-shadow: -8px 0 0 #ec1313;
+  box-shadow: -8px 0 0 #ec1313;
+}
+
+.section-article-genre .btn-container .active-btn {
+  color: #ec1313;
+  -webkit-box-shadow: -8px 0 0 #ec1313;
+  box-shadow: -8px 0 0 #ec1313;
+}
+
+.section-article-genre .genre-info {
+  -webkit-box-flex: 8;
+  -ms-flex: 8;
+  flex: 8;
+  padding: 1.5em;
+  color: #f1f5f8;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  line-height: 1.6;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(34, 34, 34, 0.9)),
+    color-stop(rgba(34, 34, 34, 0.6)),
+    to(rgba(34, 34, 34, 0.3))
+  );
+  background: linear-gradient(
+    to right,
+    rgba(34, 34, 34, 0.9),
+    rgba(34, 34, 34, 0.6),
+    rgba(34, 34, 34, 0.3)
+  );
+}
+
+.section-article-genre .genre-info h3 {
+  font-size: 2.4rem;
+  font-family: "Playfair Display";
+  letter-spacing: 3px;
+}
+
+.section-article-genre .genre-info h6 {
+  margin: 1em 0 3em;
+  font-size: 1.2rem;
+  font-style: italic;
+  letter-spacing: 1.5px;
+}
+
+.section-article-genre .genre-info .text {
+  font-size: 1.3rem;
+  font-family: "Poppins";
+}
+
+.section-article-artist {
+  padding: 2em 0 0;
+  position: relative;
+}
+
+.section-article-artist .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  z-index: -1;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.section-article-artist .background-image.image-0 {
+  background-image: url("https://asset.kompas.com/crops/u_QIJqeHWImEwVL_0SSielsns4k=/551x193:1237x650/750x500/data/photo/2020/09/22/5f69c0ab34730.png");
+}
+
+.section-article-artist .background-image.image-1 {
+  background-image: url("http://musicscore.ms/uploads/musicscore/performer_photos/9mm-parabellum-bullet-2366.jpg");
+}
+
+.section-article-artist .background-image.image-2 {
+  background-image: url("https://resources.tidal.com/images/c7acc14e/f949/4984/8973/1e1c83e8af9b/750x750.jpg");
+}
+
+.section-article-artist .background-image.image-3 {
+  background-image: url("https://skream.jp/news/2019/04/23/images/%E7%B1%B3%E6%B4%A5AP_1main.jpg");
+}
+
+.section-article-artist .background-image.image-4 {
+  background-image: url("https://variety.com/wp-content/uploads/2018/04/hans-zimmer-bw-e1532552133820.jpg");
+}
+
+.section-article-artist h2 {
+  letter-spacing: 1px;
+  font-family: "Libre Baskerville";
+  padding: 1em;
+  background-color: #555555;
+  color: #f1f5f8;
+}
+
+.section-article-artist h2 a {
+  color: #0eb60e;
+  margin: 0 0.5em;
+}
+
+.section-article-artist .artist-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  min-height: 800px;
+  margin: 2em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section-article-artist .artist-container div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 20px rgba(34, 34, 34, 0.2);
+  box-shadow: 0 0 20px rgba(34, 34, 34, 0.2);
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  padding: 2em 0;
+  text-align: center;
+  font-family: "Poppins";
+  padding: 0.8em;
+  background-color: rgba(241, 245, 248, 0.9);
+  opacity: 0;
+  border-radius: 5px;
+}
+
+.section-article-artist .artist-container div.activeSlide {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.section-article-artist .artist-container div.nextSlide {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.section-article-artist .artist-container div.lastSlide {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.section-article-artist .artist-container div img {
+  max-width: 200px;
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.section-article-artist .artist-container div h3 {
+  margin: 0.4em 0;
+  font-family: "Playfair Display";
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+}
+
+.section-article-artist .artist-container div .album-container {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 95%;
+  list-style-type: disc;
+  font-size: 1.2rem;
+}
+
+.section-article-artist .artist-container div .album-container h4 {
+  font-size: 1.5rem;
+  margin: 0.5em 0;
+  letter-spacing: 1px;
+}
+
+.section-article-artist .artist-container div .song-container {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 95%;
+  list-style-type: disc;
+  font-size: 1.2rem;
+}
+
+.section-article-artist .artist-container div .song-container h5 {
+  font-size: 1.3rem;
+  margin: 0.5em 0;
+  letter-spacing: 1px;
+}
+
+.section-article-artist .artist-container div p {
+  font-size: 2rem;
+}
+
+.section-article-artist .artist-container div p a {
+  color: #0eb60e;
+}
+
+.section-article-artist .artist-container button {
+  position: absolute;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(34, 34, 34, 0.2);
+  color: #f1f5f8;
+  border-radius: 5px;
+  top: 50%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.section-article-artist .artist-container button:hover {
+  background-color: #555555;
+}
+
+.section-article-artist .artist-container .prev {
+  left: 0;
+}
+
+.section-article-artist .artist-container .next {
+  right: 0;
+}
+
+.section-article-text {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(34, 34, 34, 0.9)),
+      color-stop(rgba(34, 34, 34, 0.6)),
+      to(rgba(34, 34, 34, 0.3))
+    ),
+    url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/504230/ae00da9c3f0ee2f1d8236a048f8507a7b1046a04.jpg");
+  background: linear-gradient(
+      to right,
+      rgba(34, 34, 34, 0.9),
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.3)
+    ),
+    url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/504230/ae00da9c3f0ee2f1d8236a048f8507a7b1046a04.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: #f1f5f8;
+}
+
+.section-article-text .text {
+  text-align: center;
+}
+
+.section-article-text .text h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display";
+}
+
+.section-article-text .text p {
+  font-size: 1.4rem;
+  font-family: "Poppins";
+}
+
+.section-article-text .text p a {
+  color: #0eb60e;
+}
+
+@media (max-width: 800px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  .header-nav {
+    background: rgba(34, 34, 34, 0.98);
+    height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .header-nav.active {
+    background: rgba(34, 34, 34, 0.98);
+  }
+  .header-nav.active a {
+    color: #f1f5f8;
+  }
+  .header-nav_links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .header-nav .close-btn {
+    display: block;
+    -webkit-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+  }
+  .header-nav .close-btn:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  .header .toggle-btn {
+    display: block;
+    font-size: 2rem;
+    color: #067ac7;
+    z-index: 9;
+    -webkit-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+  }
+  .header .toggle-btn:hover {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .header .nav-container {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+    overflow: hidden;
+    height: 100vh;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .header .show-navmenu {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .section-article-genre {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .section-article-genre .btn-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(200px, 1fr)) [auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .section-article-genre .btn-container .genre-btn {
+    padding: 0.4em 1em;
+    display: block;
+  }
+  .section-article-genre .genre-info {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section_article {
+    right: 0;
+    left: 10vw;
+  }
+  .header-section_article h1 {
+    font-size: 2.6rem;
+  }
+  .header-section_article p {
+    font-size: 1.1rem;
+  }
+  .section-article-info .content h2 {
+    font-size: 2rem;
+  }
+  .section-article-info .content p {
+    font-size: 1.2rem;
+  }
+  .section-article-info .content h5 {
+    font-size: 1.2rem;
+  }
+  .section-article-genre .btn-container {
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-article-genre .btn-container .genre-btn {
+    font-size: 1.2rem;
+  }
+  .section-article-genre .genre-info .text {
+    font-size: 1rem;
+  }
+  .section-article-artist .artist-container {
+    min-height: 700px;
+  }
+  .section-article-artist .artist-container div h3 {
+    font-size: 1.8rem;
+  }
+  .section-article-artist .artist-container div .album-container {
+    font-size: 0.9rem;
+  }
+  .section-article-artist .artist-container div .album-container h4 {
+    font-size: 1.3rem;
+  }
+  .section-article-artist .artist-container div .song-container {
+    font-size: 0.9rem;
+  }
+  .section-article-artist .artist-container div .song-container h5 {
+    font-size: 1.1rem;
+  }
+  .section-article-artist .artist-container div p {
+    font-size: 1.6rem;
+  }
+}
+
+footer {
+  min-height: 200px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: #222;
+  margin-top: 3em;
+  padding: 0.5em;
+}
+
+footer .text {
+  text-align: center;
+  color: #f1f5f8;
+  padding: 0;
+}
+
+footer .text h3 {
+  font-size: 1.6rem;
+  font-family: "Ubuntu";
+}
+
+footer .text p {
+  font-size: 1.4rem;
+}
+
+footer .text .social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+footer .text .social-links li a {
+  font-size: 1.5rem;
+  color: #f1f5f8;
+}
+/*# sourceMappingURL=main.css.map */
