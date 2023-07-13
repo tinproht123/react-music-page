@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import HeaderContent from "./components/HeaderContent";
 import SectionContainer from "./components/SectionContainer";
 import Footer from "./components/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   faFacebook,
   faGoogle,

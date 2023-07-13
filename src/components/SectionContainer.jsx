@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
@@ -374,8 +375,8 @@ const SectionContainer = () => {
           </h2>
           <p>
             You can listen my music list here:{" "}
-            <a href="https://open.spotify.com/playlist/56vuiaJWlpnsGJKD77N5dO">
-              <i className="fab fa-spotify"></i>
+            <a href="https://open.spotify.com/user/31254wdum2khxtf2ovshjvemjnqa">
+              <FontAwesomeIcon icon="fa-brands fa-spotify" />
             </a>{" "}
             (i still updating manually :v)
           </p>

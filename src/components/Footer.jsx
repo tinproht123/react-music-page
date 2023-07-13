@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-target-blank */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

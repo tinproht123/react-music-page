@@ -1,24 +1,25 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 const links = [
   {
     id: 1,
-    url: "#home",
+    url: "home",
     text: "Home",
   },
   {
     id: 2,
-    url: "#about",
+    url: "about",
     text: "About",
   },
   {
     id: 3,
-    url: "#music",
+    url: "music",
     text: "Music",
   },
   {
     id: 4,
-    url: "#contact",
+    url: "contact",
     text: "Contact",
   },
 ];
@@ -47,7 +48,7 @@ const HeaderContent = () => {
               const { id, url, text } = link;
               return (
                 <li key={id}>
-                  <a href={url}>{text}</a>
+                  <a href={`#${url}`}>{text}</a>
                 </li>
               );
             })}
