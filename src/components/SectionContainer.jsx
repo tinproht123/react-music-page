@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 
 const genres = [
@@ -170,6 +171,55 @@ const favArtists = [
     ],
     spotify: "https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ",
   },
+  {
+    id: 6,
+    name: "Lana Del Rey",
+    image:
+      "https://pbs.twimg.com/media/FjaTHBGWYAM_9WA?format=jpg&name=4096x4096",
+    album: [
+      "Born To Die",
+      "Norman Fucking Rockwell",
+      "Ultraviolence",
+      "Did you know that there's a tunnel under the Ocean Blvd",
+    ],
+    song: [
+      "Summertime Sadness",
+      "Love",
+      "Lost at Sea",
+      "Norman Fucking Rockwell",
+      "Queen of Disaster",
+    ],
+    spotify: "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa",
+  },
+
+  {
+    id: 7,
+    name: "Radiohead",
+    image:
+      "https://i0.wp.com/www.musikblog.de/wp-content/uploads/2021/11/Radiohead_Credits_Tom_Sheehan.jpg?fit=1200%2C725&ssl=1",
+    album: ["OK Computer", "The Bends", "KID A MNESIA", "Pablo Honey"],
+    song: [
+      "No Surprises",
+      "Creep",
+      "How to Disappear Completely",
+      "Fake Plastic Trees",
+      "Black Start",
+    ],
+  },
+  {
+    id: 8,
+    name: "The Beatles",
+    image:
+      "https://media.npr.org/assets/img/2019/09/06/rs286_ar_press02-the-beatles-twickenham-april-9-1969-photo-by-bruce-mcbroom-apple-corps-ltd.-b69841e515e37d270dec9130100e5a097d96c2ef.jpg",
+    album: ["Abbey Road", "Revolver", "Sgt. Pepper's Lonely Hearts Club Band"],
+    song: [
+      "Here Comes The Sun",
+      "Come Together",
+      "Hey Jude",
+      "In My Life",
+      "Yesterday",
+    ],
+  },
 ];
 
 const SectionContainer = () => {
@@ -206,7 +256,7 @@ const SectionContainer = () => {
 
   return (
     <section className="section">
-      <article className="section-article-info">
+      <article className="section-article-info" id="about">
         <div className="content">
           <h2>
             My hobby I like the most is listening to music{" "}
@@ -222,7 +272,11 @@ const SectionContainer = () => {
         </div>
       </article>
 
-      <article className="section-article-genre" style={sectionStyle}>
+      <article
+        className="section-article-genre"
+        style={sectionStyle}
+        id="music"
+      >
         <div className="btn-container">
           {genres.map((item, index) => {
             return (
@@ -257,7 +311,7 @@ const SectionContainer = () => {
           Here are some of my favourite artists, you can give a try to listen
           them on{" "}
           <a href="https://open.spotify.com/">
-            <i className="fab fa-spotify"></i> Spotify
+            <FontAwesomeIcon icon="fa-brands fa-spotify" /> Spotify
           </a>
         </h2>
         <div className="artist-container">
@@ -295,17 +349,17 @@ const SectionContainer = () => {
                 <p>
                   Listen now:{" "}
                   <a href={spotify}>
-                    <i className="fab fa-spotify"></i>
+                    <FontAwesomeIcon icon="fa-brands fa-spotify" />
                   </a>
                 </p>
               </div>
             );
           })}
           <button className="btn prev" onClick={() => setIndex(index - 1)}>
-            <i className="fas fa-chevron-left"></i>
+            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
           </button>
           <button className="btn next" onClick={() => setIndex(index + 1)}>
-            <i className="fas fa-chevron-right"></i>
+            <FontAwesomeIcon icon="fa-solid fa-chevron-right" />
           </button>
         </div>
       </article>

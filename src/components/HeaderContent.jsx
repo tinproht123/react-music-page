@@ -3,22 +3,22 @@ import { useState } from "react";
 const links = [
   {
     id: 1,
-    url: "#",
+    url: "#home",
     text: "Home",
   },
   {
     id: 2,
-    url: "#",
+    url: "#about",
     text: "About",
   },
   {
     id: 3,
-    url: "#",
+    url: "#music",
     text: "Music",
   },
   {
     id: 4,
-    url: "#",
+    url: "#contact",
     text: "Contact",
   },
 ];
@@ -37,7 +37,7 @@ const HeaderContent = () => {
 
   window.addEventListener("scroll", changeBackground);
   return (
-    <header className="header">
+    <header className="header" id="home">
       <div
         className={showNavMenu ? "nav-container show-navmenu" : "nav-container"}
       >

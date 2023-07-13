@@ -388,6 +388,18 @@ h6 {
   background-image: url("https://variety.com/wp-content/uploads/2018/04/hans-zimmer-bw-e1532552133820.jpg");
 }
 
+.section-article-artist .background-image.image-5 {
+  background-image: url("https://pbs.twimg.com/media/FjaTHBGWYAM_9WA?format=jpg&name=4096x4096");
+}
+
+.section-article-artist .background-image.image-6 {
+  background-image: url("https://i0.wp.com/www.musikblog.de/wp-content/uploads/2021/11/Radiohead_Credits_Tom_Sheehan.jpg?fit=1200%2C725&ssl=1");
+}
+
+.section-article-artist .background-image.image-7 {
+  background-image: url("https://media.npr.org/assets/img/2019/09/06/rs286_ar_press02-the-beatles-twickenham-april-9-1969-photo-by-bruce-mcbroom-apple-corps-ltd.-b69841e515e37d270dec9130100e5a097d96c2ef.jpg");
+}
+
 .section-article-artist h2 {
   letter-spacing: 1px;
   font-family: "Libre Baskerville";
@@ -735,7 +747,6 @@ footer {
   display: grid;
   place-items: center;
   background-color: #222;
-  margin-top: 3em;
   padding: 0.5em;
 }
 
