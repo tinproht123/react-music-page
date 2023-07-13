@@ -205,6 +205,7 @@ const favArtists = [
       "Fake Plastic Trees",
       "Black Start",
     ],
+    spotify: "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb",
   },
   {
     id: 8,
@@ -219,6 +220,7 @@ const favArtists = [
       "In My Life",
       "Yesterday",
     ],
+    spotify: "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2",
   },
 ];
 
